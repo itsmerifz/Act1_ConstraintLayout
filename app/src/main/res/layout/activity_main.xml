@@ -18,7 +18,8 @@
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintVertical_bias="0.223"
         app:layout_constraintTop_toTopOf="parent"
-        tools:srcCompat="@drawable/user" />
+        android:contentDescription="@string/app_name"
+        app:srcCompat="@drawable/login" />
 
     <EditText
         android:id="@+id/editTextTextPassword"
@@ -26,7 +27,7 @@
         android:layout_height="wrap_content"
         android:layout_marginLeft="16dp"
         android:layout_marginRight="16dp"
-        android:background="#fffff"
+        android:background="#ffffff"
         android:ems="10"
         android:hint="@string/pass"
         android:inputType="textPassword"
@@ -60,7 +61,7 @@
         android:layout_height="wrap_content"
         android:layout_marginLeft="16dp"
         android:layout_marginRight="16dp"
-        android:background="#fffff"
+        android:background="#ffffff"
         android:ems="10"
         android:hint="@string/mail"
         android:inputType="textPersonName"
