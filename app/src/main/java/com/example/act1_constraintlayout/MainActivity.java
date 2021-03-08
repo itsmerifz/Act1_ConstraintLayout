@@ -24,7 +24,7 @@ public class MainActivity extends AppCompatActivity {
     }
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
+        super.onCreate(savedInstanceState); 
         setContentView(R.layout.activity_main);
 
         edMail = findViewById(R.id.editEmail);
@@ -37,16 +37,23 @@ public class MainActivity extends AppCompatActivity {
                 email = edMail.getText().toString();
                 pass = edPass.getText().toString();
 
-                if(validasiData() == true){
+                if(edMail.getText().toString().equals("") || edPass.getText().toString().equals("")){
                     Toast t = Toast.makeText(getApplicationContext(),
-                            "Sukses !\n Email Anda : "+email+"\n Password Anda : "+pass,
+                            "Email / Password tidak terisi !",
                             Toast.LENGTH_LONG);
                     t.show();
                 }else{
-                    Toast t = Toast.makeText(getApplicationContext(),
-                            "Email / Password anda Salah !\n Silahkan Coba lagi",
-                            Toast.LENGTH_LONG);
-                    t.show();
+                    if(validasiData() == true){
+                        Toast t = Toast.makeText(getApplicationContext(),
+                                "Sukses !\n Email Anda : "+email+"\n Password Anda : "+pass,
+                                Toast.LENGTH_LONG);
+                        t.show();
+                    }else{
+                        Toast t = Toast.makeText(getApplicationContext(),
+                                "Email / Password anda Salah !\n Silahkan Coba lagi",
+                                Toast.LENGTH_LONG);
+                        t.show();
+                    }
                 }
 
             }
