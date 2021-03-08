@@ -13,14 +13,20 @@ public class MainActivity extends AppCompatActivity {
     Button btnLogin;
     String email, pass;
 
-    public boolean validasiData(){
+    public int validasiData(){
         String emailActive = "azkklk@gmail.com";
         String passActive = "Arief1707";
 
-        if(emailActive.equals(edMail.getText().toString()) && passActive.equals(edPass.getText().toString())){
-            return true;
+        if(emailActive.equals(edMail.getText().toString()) && passActive.equals(edPass.getText().toString())){ // BENAR SEMUA
+            return 1;
         }
-        return false;
+        else if(emailActive.equals(edMail.getText().toString()) && !passActive.equals(edPass.getText().toString())){ // SALAH PASS
+            return 2;
+        }
+        else if(!emailActive.equals(edMail.getText().toString()) && passActive.equals(edPass.getText().toString())){ // SALAH EMAIL
+            return 3;
+        }
+        return 0;
     }
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -43,14 +49,24 @@ public class MainActivity extends AppCompatActivity {
                             Toast.LENGTH_LONG);
                     t.show();
                 }else{
-                    if(validasiData() == true){
+                    if(validasiData() == 1){
                         Toast t = Toast.makeText(getApplicationContext(),
                                 "Sukses !\n Email Anda : "+email+"\n Password Anda : "+pass,
                                 Toast.LENGTH_LONG);
                         t.show();
-                    }else{
+                    }else if(validasiData() == 0){
                         Toast t = Toast.makeText(getApplicationContext(),
-                                "Email / Password anda Salah !\n Silahkan Coba lagi",
+                                "Email dan Password anda Salah !\n Silahkan Coba lagi",
+                                Toast.LENGTH_LONG);
+                        t.show();
+                    }else if(validasiData() == 2){
+                        Toast t = Toast.makeText(getApplicationContext(),
+                                "Password anda Salah !\n Silahkan Coba lagi",
+                                Toast.LENGTH_LONG);
+                        t.show();
+                    }else if(validasiData() == 3) {
+                        Toast t = Toast.makeText(getApplicationContext(),
+                                "Email anda Salah !\n Silahkan Coba lagi",
                                 Toast.LENGTH_LONG);
                         t.show();
                     }
