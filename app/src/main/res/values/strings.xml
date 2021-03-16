@@ -5,4 +5,5 @@
     <string name="mail">E-Mail</string>
     <string name="pass">Password</string>
     <string name="btnLogin">Sign Up</string>
+    <string name="judul2">Status Login</string>
 </resources>

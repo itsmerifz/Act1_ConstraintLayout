@@ -2,6 +2,7 @@ package com.example.act1_constraintlayout;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -16,14 +17,16 @@ public class MainActivity extends AppCompatActivity {
     public int validasiData(){
         String emailActive = "azkklk@gmail.com";
         String passActive = "Arief1707";
+        email = edMail.getText().toString();
+        pass = edPass.getText().toString();
 
-        if(emailActive.equals(edMail.getText().toString()) && passActive.equals(edPass.getText().toString())){ // BENAR SEMUA
+        if(emailActive.equals(email) && passActive.equals(pass)){ // BENAR SEMUA
             return 1;
         }
-        else if(emailActive.equals(edMail.getText().toString()) && !passActive.equals(edPass.getText().toString())){ // SALAH PASS
+        else if(emailActive.equals(email) && !passActive.equals(pass)){ // SALAH PASS
             return 2;
         }
-        else if(!emailActive.equals(edMail.getText().toString()) && passActive.equals(edPass.getText().toString())){ // SALAH EMAIL
+        else if(!emailActive.equals(email) && passActive.equals(pass)){ // SALAH EMAIL
             return 3;
         }
         return 0;
@@ -43,7 +46,7 @@ public class MainActivity extends AppCompatActivity {
                 email = edMail.getText().toString();
                 pass = edPass.getText().toString();
 
-                if(edMail.getText().toString().equals("") || edPass.getText().toString().equals("")){
+                if(email.equals("") || pass.equals("")){
                     Toast t = Toast.makeText(getApplicationContext(),
                             "Email / Password tidak terisi !",
                             Toast.LENGTH_LONG);
@@ -54,6 +57,13 @@ public class MainActivity extends AppCompatActivity {
                                 "Sukses !\n Email Anda : "+email+"\n Password Anda : "+pass,
                                 Toast.LENGTH_LONG);
                         t.show();
+                        Bundle b = new Bundle();
+                        b.putString("email",email.trim());
+                        b.putString("pass",pass.trim());
+
+                        Intent i = new Intent(MainActivity.this,Page2.class);
+                        i.putExtras(b);
+                        startActivity(i);
                     }else if(validasiData() == 0){
                         Toast t = Toast.makeText(getApplicationContext(),
                                 "Email dan Password anda Salah !\n Silahkan Coba lagi",
