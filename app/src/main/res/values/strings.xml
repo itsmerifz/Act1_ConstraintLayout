@@ -6,4 +6,7 @@
     <string name="pass">Password</string>
     <string name="btnLogin">Sign Up</string>
     <string name="judul2">Status Login</string>
+    <string name="dataView">Data Anda</string>
+    <string name="dataMail">Email Anda</string>
+    <string name="dataPass">Password Anda</string>
 </resources>

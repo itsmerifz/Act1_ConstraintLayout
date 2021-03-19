@@ -6,20 +6,25 @@ import android.widget.TextView;
 import androidx.appcompat.app.AppCompatActivity;
 
 public class Page2 extends AppCompatActivity {
-    TextView txtHasil;
+    TextView resultEmail,resultPass;
 
-    String email;
+    String email,pass;
 
     @Override
     protected void onCreate(Bundle savedInstanceState){
         super.onCreate(savedInstanceState);
         setContentView(R.layout.page2);
+        resultEmail = findViewById(R.id.textResEmail);
+        resultPass = findViewById(R.id.textResPass);
 
-        txtHasil = (TextView)findViewById(R.id.textViewHasil);
         Bundle b2 = this.getIntent().getExtras();
 
         email = b2.getString("email");
+        pass = b2.getString("pass");
 
-        txtHasil.setText("SELAMAT DATANG\n "+email);
+        resultEmail.setText(email);
+        resultPass.setText(pass);
+
+
     }
 }

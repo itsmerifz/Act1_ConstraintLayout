@@ -46,7 +46,7 @@ public class MainActivity extends AppCompatActivity {
                 email = edMail.getText().toString();
                 pass = edPass.getText().toString();
 
-                if(email.equals("") || pass.equals("")){
+                if(email.isEmpty() || pass.isEmpty()){
                     Toast t = Toast.makeText(getApplicationContext(),
                             "Email / Password tidak terisi !",
                             Toast.LENGTH_LONG);
@@ -54,14 +54,14 @@ public class MainActivity extends AppCompatActivity {
                 }else{
                     if(validasiData() == 1){
                         Toast t = Toast.makeText(getApplicationContext(),
-                                "Sukses !\n Email Anda : "+email+"\n Password Anda : "+pass,
+                                "Sukses !",
                                 Toast.LENGTH_LONG);
                         t.show();
                         Bundle b = new Bundle();
                         b.putString("email",email.trim());
                         b.putString("pass",pass.trim());
 
-                        Intent i = new Intent(MainActivity.this,Page2.class);
+                        Intent i = new Intent(getApplicationContext(),Page2.class);
                         i.putExtras(b);
                         startActivity(i);
                     }else if(validasiData() == 0){
