@@ -8,17 +8,15 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Act1_ConstraintLayout">
+        <activity android:name=".ActivityDaftar" android:label="@string/pDaftar" android:parentActivityName=".MainActivity" />
         <activity android:name=".MainActivity" android:label="@string/judul">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
         <activity android:name=".Page2" android:label="@string/judul2" android:parentActivityName=".MainActivity">
-            <intent-filter>
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
+
         </activity>
     </application>
 
