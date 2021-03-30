@@ -8,6 +8,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Act1_ConstraintLayout">
+        <activity android:name=".ActivityLihatData" android:label="@string/detailKontak" android:parentActivityName=".HomeActivity"/>
+        <activity android:name=".HomeActivity" android:label="@string/dataKontak" android:parentActivityName=".MainActivity" />
         <activity android:name=".ActivityDaftar" android:label="@string/pDaftar" android:parentActivityName=".MainActivity" />
         <activity android:name=".MainActivity" android:label="@string/judul">
             <intent-filter>

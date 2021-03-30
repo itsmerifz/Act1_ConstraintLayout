@@ -81,7 +81,7 @@ public class MainActivity extends AppCompatActivity {
                         b.putString("email",email.trim());
                         b.putString("pass",pass.trim());
 
-                        Intent i = new Intent(getApplicationContext(),Page2.class);
+                        Intent i = new Intent(getApplicationContext(),HomeActivity.class);
                         i.putExtras(b);
                         startActivity(i);
                     }else if(validasiData() == 0){

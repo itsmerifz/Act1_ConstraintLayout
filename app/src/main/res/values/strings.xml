@@ -16,4 +16,11 @@
     <string name="iPass">Masukkan Password</string>
     <string name="iRPass">Masukkan Password Kembali</string>
     <string name="iAlamat">Masukkan Alamat</string>
+    <string name="lihatData">Lihat Data</string>
+    <string name="editData">Edit Data</string>
+    <string name="dataKontak">Data Kontak</string>
+    <string name="namaItem">Nama Item</string>
+    <string name="detailKontak">Detail Kontak</string>
+    <string name="nama">Nama</string>
+    <string name="noTel">Nomor Telepon</string>
 </resources>
